@@ -1,9 +1,9 @@
-import Navbar from "src/feature/navbar/navbar";
+import HeroSection from "src/feature/hero-section/hero-section";
 
 export default function Home() {
   return (
-    <main>
-      <Navbar />
-    </main>
+    <>
+      <HeroSection />
+    </>
   );
 }
