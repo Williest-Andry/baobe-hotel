@@ -1,12 +1,16 @@
-import { Apple, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="flex justify-between px-15 fixed top-10 w-full font-satoshi">
-      <div className="flex gap-2 items-center">
-        <Apple size={50} />
-        <strong className="hidden sm:flex text-3xl font-semibold">Baobé</strong>
+    <nav className="flex justify-between px-15 fixed top-10 w-full font-satoshi z-1000">
+      <div className="flex gap-2.5 items-center">
+        <img
+          className="w-6.5 h-11.75"
+          src={"/Union.svg"}
+          alt="baobe icon"
+        ></img>
+        <p className="hidden sm:flex text-3xl font-medium">Baobé</p>
       </div>
 
       <div className="flex gap-4 items-center bg-black rounded-full w-55 justify-between px-2">
