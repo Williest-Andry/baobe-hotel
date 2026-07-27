@@ -4,14 +4,8 @@ import Image from "next/image";
 import { motion } from "motion/react";
 
 export default function HeroSection() {
-  const lines = [
-    "Crafting unique experiences",
-    "with modern design tools",
-    "and clean code solutions.",
-  ];
-
   return (
-    <main className="relative font-outfit bg-[#4788A0] mt-5 rounded-[50px] h-[95vh] flex items-end w-[98vw] m-auto overflow-hidden">
+    <main className="mb-10 relative font-outfit bg-[#4788A0] mt-5 rounded-[50px] h-[95vh] flex items-end w-[98vw] m-auto overflow-hidden">
       <motion.figure
         initial={{ y: 500, opacity: 0 }}
         transition={{
