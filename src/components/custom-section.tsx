@@ -65,7 +65,7 @@ export default function CustomSection({
     );
   } else {
     return (
-      <section className="flex flex-col-reverse min-[1200px]:flex-row items-center justify-end px-6 pr-10 gap-35 mb-6">
+      <section className="flex flex-col-reverse min-[1200px]:flex-row items-center justify-end px-6 pr-10 gap-35 mb-6 overflow-hidden">
         <DetailsUnderSection
           sectionSpan={sectionSpan}
           title={title}
@@ -78,7 +78,11 @@ export default function CustomSection({
           itemsPosition={itemsPosition}
           textPosition={textPosition}
         />
-        <figure>
+        <motion.figure
+          initial={{ x: 200, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.1 }}
+        >
           <Image
             src={imageSrc}
             alt="about image"
@@ -86,7 +90,7 @@ export default function CustomSection({
             height={0}
             className="w-70 min-[1200px]:w-212.5"
           />
-        </figure>
+        </motion.figure>
       </section>
     );
   }

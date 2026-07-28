@@ -8,6 +8,12 @@
 @theme {
   --font-satoshi: "Satoshi", sans-serif;
   --font-outfit: var(--font-outfit), sans-serif;
+
+  --background-image-suite-signature: url("../../public/content.svg");
+  --background-image-suite-signature-light: url("../../public/suite-essentielle.svg");
+  --background-image-suite-signature-dark: url("../../public/suite-dark.svg");
+
+  --breakpoint-laptop: 1200px;
 }
 
 @theme inline {
