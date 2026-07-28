@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import DetailsUnderSection from "./details-under-section";
+import { motion } from "motion/react";
 
 type CustomSectionProps = {
   imagePosition: "left" | "right";
@@ -33,7 +36,11 @@ export default function CustomSection({
   if (imagePosition === "left") {
     return (
       <section className="flex flex-col min-[1200px]:flex-row items-center px-6 gap-14.5 mb-6">
-        <figure>
+        <motion.figure
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.1 }}
+        >
           <Image
             src={imageSrc}
             alt="about image"
@@ -41,7 +48,7 @@ export default function CustomSection({
             height={0}
             className="w-70 min-[1200px]:w-212.5"
           />
-        </figure>
+        </motion.figure>
         <DetailsUnderSection
           sectionSpan={sectionSpan}
           title={title}

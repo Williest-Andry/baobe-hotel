@@ -1,5 +1,7 @@
 import Link from "next/link";
 import React from "react";
+import { motion } from "motion/react";
+import { TextAnimate } from "src/components/ui/text-animate";
 
 type DetailsUnderSectionProps = {
   sectionSpan: string;
@@ -43,36 +45,70 @@ export default function DetailsUnderSection({
       }
     >
       <article className="flex flex-col" style={{ gap: `${textPixelGap}px` }}>
-        <span className="font-satoshi font-light text-[12px] text-[#696969] tracking-[12%]">
+        <TextAnimate
+          animation="slideLeft"
+          by="character"
+          once
+          viewport={{ once: true, amount: 1 }}
+          className="font-satoshi font-light text-[12px] text-[#696969] tracking-[12%]"
+        >
           {sectionSpan}
-        </span>
+        </TextAnimate>
 
         <div className={`font-outfit`}>
-          <h2
-            className="font-medium text-[22px] max-[1200px]:ml-0! min-[431px]:text-[36px] min-[1200px]:text-[56px] w-70 min-[431px]:w-100 min-[1200px]:w-160 leading-15 min-[1200px]:leading-20"
+          <TextAnimate
+            animation="fadeIn"
+            by="line"
+            as="p"
+            viewport={{ once: true, amount: 1 }}
             style={{ margin: itemsPosition === "items-center" ? "auto" : "" }}
+            className="font-medium text-[22px] max-[1200px]:ml-0! min-[431px]:text-[36px] min-[1200px]:text-[56px] w-70 min-[431px]:w-100 min-[1200px]:w-160 leading-15 min-[1200px]:leading-20"
           >
             {title}
-          </h2>
+          </TextAnimate>
+
           <div className="flex flex-col gap-3">
-            <p className="font-light text-[20px] min-[1200px]:text-[24px] text-[#696969] leading-7.5">
+            <TextAnimate
+              animation="fadeIn"
+              by="line"
+              as="p"
+              viewport={{ once: true, amount: 1 }}
+              className="font-light text-[20px] min-[1200px]:text-[24px] text-[#696969] leading-7.5"
+            >
               {paragraph}
-            </p>
+            </TextAnimate>
             {secondParagraph && (
-              <p className="font-light text-[20px] min-[1200px]:text-[24px] text-[#696969] leading-7.5">
+              <TextAnimate
+                animation="fadeIn"
+                by="line"
+                as="p"
+                viewport={{ once: true, amount: 1 }}
+                className="font-light text-[20px] min-[1200px]:text-[24px] text-[#696969] leading-7.5"
+              >
                 {secondParagraph}
-              </p>
+              </TextAnimate>
             )}
           </div>
         </div>
       </article>
 
-      <Link
-        href={buttonLink}
-        className="font-satoshi font-medium text-[26px] tracking-[8%] underline"
+      <motion.button
+        className="flex font-satoshi font-medium text-[26px] tracking-[8%] underline"
+        initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
       >
-        {buttonText}
-      </Link>
+        <Link
+          href={buttonLink}
+          style={{
+            margin: itemsPosition === "items-center" ? "auto" : "",
+          }}
+          className="max-[1200px]:ml-0!"
+        >
+          {buttonText}
+        </Link>
+      </motion.button>
     </article>
   );
 }
