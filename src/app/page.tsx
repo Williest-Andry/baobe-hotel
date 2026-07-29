@@ -1,5 +1,6 @@
-import CustomSection from "src/component/custom-section";
+import CustomSection from "src/components/custom-section";
 import HeroSection from "src/feature/hero-section/hero-section";
+import SuiteImageSection from "src/feature/suite/suite-image-section";
 
 export default function Home() {
   return (
@@ -34,6 +35,8 @@ export default function Home() {
         itemsPosition="items-center"
         textPosition="text-center"
       />
+
+      <SuiteImageSection />
     </>
   );
 }
