@@ -12,8 +12,14 @@
   --background-image-suite-signature: url("../../public/content.svg");
   --background-image-suite-signature-light: url("../../public/suite-essentielle.svg");
   --background-image-suite-signature-dark: url("../../public/suite-dark.svg");
+  --background-image-spa: url("../../public/spa.svg");
+  --background-image-piscine: url("../../public/piscine.svg");
+  --background-image-saveur: url("../../public/saveur.svg");
 
   --breakpoint-laptop: 1200px;
+
+  --color-primary-grey: #696969;
+  --color-variant-white: #E4E4E4;
 }
 
 @theme inline {
