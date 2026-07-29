@@ -1,4 +1,5 @@
 import CustomSection from "src/components/custom-section";
+import ExperienceSection from "src/feature/experience/experience-section";
 import HeroSection from "src/feature/hero-section/hero-section";
 import SuiteImageSection from "src/feature/suite/suite-image-section";
 
@@ -37,6 +38,8 @@ export default function Home() {
       />
 
       <SuiteImageSection />
+
+      <ExperienceSection />
     </>
   );
 }
