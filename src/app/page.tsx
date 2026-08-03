@@ -3,6 +3,7 @@ import ExperienceSection from "src/feature/experience/experience-section";
 import GallerySection from "src/feature/gallery/gallery-section";
 import HeroSection from "src/feature/hero-section/hero-section";
 import SuiteImageSection from "src/feature/suite/suite-image-section";
+import TestimonySection from "src/feature/testimony/testimony-section";
 
 export default function Home() {
   return (
@@ -43,6 +44,8 @@ export default function Home() {
       <ExperienceSection />
 
       <GallerySection />
+
+      <TestimonySection />
     </>
   );
 }

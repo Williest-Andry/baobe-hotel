@@ -6,6 +6,7 @@ type ArticleTextSectionProps = {
   text: string;
   titleClassName?: string;
   textClassName?: string;
+  articleClassName?: string;
 };
 
 export default function ArticleTextSection({
@@ -14,9 +15,12 @@ export default function ArticleTextSection({
   text,
   titleClassName,
   textClassName,
+  articleClassName,
 }: ArticleTextSectionProps) {
   return (
-    <article className="ml-15 laptop:ml-0 flex flex-col justify-start laptop:items-center laptop:justify-center gap-7 mb-20">
+    <article
+      className={`${articleClassName ? articleClassName : " justify-start laptop:items-center laptop:justify-center "} ml-15 laptop:ml-0 flex flex-col  gap-7 mb-20`}
+    >
       <TextAnimate
         animation="slideLeft"
         by="character"
@@ -35,7 +39,7 @@ export default function ArticleTextSection({
           as="h2"
           duration={1}
           viewport={{ once: true, amount: 1 }}
-          className={`${titleClassName ? titleClassName : " w-[70%] laptop:w-190 "} font-outfit text-[36px] laptop:text-[56px] leading-15.5 tracking-[-1%] text-left laptop:text-center`}
+          className={`${titleClassName ? titleClassName : " w-[70%] laptop:w-190 text-left laptop:text-center "} font-outfit text-[36px] laptop:text-[56px] leading-15.5 tracking-[-1%] `}
         >
           {title}
         </TextAnimate>
@@ -47,7 +51,7 @@ export default function ArticleTextSection({
           duration={2}
           delay={0.4}
           viewport={{ once: true, amount: 1 }}
-          className={`${textClassName ? textClassName : " not-laptop:w-[70%] "} font-outfit text-[20px] laptop:text-[24px]  leading-7.5 text-primary-grey text-left laptop:text-center`}
+          className={`${textClassName ? textClassName : " not-laptop:w-[70%] text-left laptop:text-center "} font-outfit text-[20px] laptop:text-[24px]  leading-7.5 text-primary-grey `}
         >
           {text}
         </TextAnimate>

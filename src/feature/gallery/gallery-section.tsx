@@ -47,8 +47,8 @@ export default function GallerySection() {
   return (
     <section className="flex flex-col">
       <ArticleTextSection
-        titleClassName="w-full"
-        textClassName="w-[70%] laptop:w-[98vw] "
+        titleClassName="w-full text-left laptop:text-center"
+        textClassName="w-[70%] laptop:w-[98vw] text-left laptop:text-center"
         span="GALERIE"
         title="UN REGARD SUR L’UNIVERS BAOBÉ"
         text="Entre architecture organique, lumière chaleureuse et atmosphère apaisante, chaque image révèle une facette de l’expérience Baobé."
@@ -62,9 +62,9 @@ export default function GallerySection() {
         className="w-full cursor-grab"
       >
         <CarouselContent>
-          {galleries.map((g) => (
+          {galleries.map((g, index) => (
             <CarouselItem
-              key={g.image}
+              key={index}
               className="relative w-full h-100 sm:h-172 basis-50 sm:basis-114.5 ml-4"
             >
               <Image
